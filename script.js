@@ -14,15 +14,20 @@ searchBtn.addEventListener("click", async function () {
   const body = {
     departure: departureInput.value,
     arrival: arrivalInput.value,
-    date: dateInput.value,
+    date: "2025-11-04T09:40:05.123+00:00",
   };
-  const response = await fetch("http://localhost:3000/trip", {
-    method: "GET",
+  const response = await fetch("http://localhost:3000/trips", {
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(body),
   });
   const data = await response.json();
+  if (!data.trip.length) {
+    document.querySelector("#trips-img").src = "images/notfound.png";
+    document.querySelector("#paragraph-trips").textContent = "No trip found.";
+  } else {
+  }
   console.log(data);
 });
