@@ -11,7 +11,18 @@ dateInput.value = actualDate;
 const searchBtn = document.querySelector("#search");
 
 searchBtn.addEventListener("click", async function () {
-  //   const response = await fetch("http://localhost:3000");
-  //   const data = response.json();
-  console.log(departureInput.value, arrivalInput.value, dateInput.value);
+  const body = {
+    departure: departureInput.value,
+    arrival: arrivalInput.value,
+    date: dateInput.value,
+  };
+  const response = await fetch("http://localhost:3000/trip", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+  const data = await response.json();
+  console.log(data);
 });
