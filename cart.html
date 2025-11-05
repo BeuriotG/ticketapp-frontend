@@ -8,19 +8,26 @@
   </head>
   <body>
     <header>
-      <a href="/">
+      <a href="/frontend">
         <h2>Tickethack</h2>
       </a>
       <div>
-        <a href="/cart.html">Cart</a>
-        <a href="/bookings/html">Bookings</a>
+        <a href="/frontend/cart.html">Cart</a>
+        <a href="/frontend/bookings.html">Bookings</a>
       </div>
     </header>
     <main>
-      <div>
-        <p>No tickets in your cart.</p>
-        <p>Why not plan a trip?</p>
+      <div id="cart">
+        <div id="tripsDiv">
+          <p class="paragraphTrips">No tickets in your cart.</p>
+          <p class="paragraphTrips">Why not plan a trip?</p>
+        </div>
+        <div id="divTotal">
+          <p>Total: <span id="totalCost"></span></p>
+          <button id="purchase">Purchase</button>
+        </div>
       </div>
     </main>
   </body>
+  <script src="cart.js"></script>
 </html>

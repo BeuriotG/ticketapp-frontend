@@ -26,8 +26,7 @@ header {
   h2 {
     color: green;
   }
-  div {
-  }
+
   a {
     margin: 0 1em;
     text-decoration-line: none;
@@ -55,7 +54,7 @@ main {
 }
 
 #container {
-  height: 60%;
+  height: 50vh;
   width: 50%;
 
   display: grid;
@@ -110,6 +109,7 @@ main {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  gap: 1em;
   img {
     border-bottom: solid 5px green;
   }
@@ -121,4 +121,24 @@ main {
   grid-column-end: 8;
   padding: 1em 0;
   border-radius: 10px;
+  overflow-y: scroll;
+}
+
+.ticketDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  background-color: lightgray;
+  padding: 0.5em;
+  width: 90%;
+
+  border-radius: 5px;
+
+  button {
+    background-color: green;
+    color: white;
+    padding: 0.5em;
+    border-radius: 10px;
+  }
 }
