@@ -30,11 +30,16 @@ function createTripTicketList(ticketList) {
   for (const trip of ticketList) {
     const { departure, arrival, date, price } = trip;
     const formatDate = new Date(date);
+    const day = formatDate.getDate();
     const hour = formatDate.getHours();
     const minutes = formatDate.getMinutes();
     const actualDate = new Date(Date.now());
     const actualHour = actualDate.getHours();
-    const waiting = actualHour - hour;
+    const actualDay = actualDate.getDate();
+    console.log(actualDay);
+    const waiting = `<span>Departure in ${day - actualDay} day and ${
+      actualHour - hour
+    } hours</span>`;
 
     const ticketDiv = `
           <div class="ticketDiv">
